@@ -1,6 +1,8 @@
+import "dotenv/config";
 const express = require('express');
 const cloudinary = require('cloudinary').v2;
 const cors = require('cors'); 
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -10,9 +12,9 @@ app.use(express.json());
 app.use(cors());
 
 cloudinary.config({
-  cloud_name: 'dpqjdd8gi',
-  api_key: '251565242714119',
-  api_secret: 'J-_XION_QTBKuxaZ39iMdV-6iBU'
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET
 });
 
 app.post('/api/upload', async (req, res) => {
