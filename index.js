@@ -1,7 +1,7 @@
 import "dotenv/config";
-const express = require('express');
-const cloudinary = require('cloudinary').v2;
-const cors = require('cors'); 
+import express from 'express';
+import cloudinary from 'cloudinary';
+import cors from 'cors';
 
 
 const app = express();
