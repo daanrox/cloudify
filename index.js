@@ -2,7 +2,11 @@ import "dotenv/config";
 import express from 'express';
 import cloudinary from 'cloudinary';
 import cors from 'cors';
+import path from 'path';
 
+
+const __filename = new URL(import.meta.url).pathname;
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -36,8 +40,11 @@ app.post('/api/upload', async (req, res) => {
   }
 });
 
+
+
 app.get('/api/', async(req, res)=>{
-    res.status(200).json({message: 'Bem vindo(a) ao CloudiFy - Dev: @daanrox'})
+    // res.status(200).json({message: 'Bem vindo(a) ao CloudiFy - Dev: @daanrox'})
+    res.render('index.ejs');
 })
 
 app.listen(PORT, async () => {
