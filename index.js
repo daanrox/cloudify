@@ -15,7 +15,7 @@ cloudinary.config({
   api_secret: 'J-_XION_QTBKuxaZ39iMdV-6iBU'
 });
 
-app.post('/upload', async (req, res) => {
+app.post('/api/upload', async (req, res) => {
   try {
 
     const link = req.headers.link;
